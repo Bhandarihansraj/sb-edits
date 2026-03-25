@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SB Studio — Cinematic Production</title>
+  <meta name="description" content="SB Studio — Luxury Cinematic Videography & Photography"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Tenor+Sans&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-inner">
+    <svg class="ld-logo-svg" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+      <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Playfair Display" font-size="38" fill="none" stroke="#c9a155" stroke-width="0.8" letter-spacing="6">SB</text>
+    </svg>
+    <div class="ld-line"><div class="ld-fill"></div></div>
+    <p class="ld-sub">Crafting Cinematic Worlds</p>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-brand">SB<em>Studio</em></a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#films">Films</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-socials">
+    <!-- ★ EDIT YOUR LINKS HERE ★ -->
+    <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" rel="noopener" title="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener" title="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+    </a>
+    <a href="https://wa.me/919737040853" target="_blank" rel="noopener" title="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mmenu">
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#films">Films</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="mm-socials">
+    <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank">YouTube</a>
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+  </div>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    <!-- Golden ratio composition: hero split -->
+    <div class="hb-left">
+      <img src="assets/images/ganesh1.jpg" alt="Ganesh Festival Cinematic" class="hb-img"/>
+      <div class="hb-overlay"></div>
+    </div>
+    <div class="hb-right">
+      <img src="assets/images/sunset1.jpg" alt="Cinematic Sky" class="hb-img"/>
+      <img src="assets/images/sunset1.jpg" alt="Cinematic Sky" class="hb-img"/>
+      <div class="hb-overlay"></div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-rule"></div>
+    <p class="hero-eye r-up">Cinematic Production Studio</p>
+    <h1 class="hero-title r-up">
+      <span class="ht-sb">SB</span>
+      <em class="ht-studio">Studio</em>
+    </h1>
+    <p class="hero-tag r-up">We photograph what others overlook.<br/>We film what words cannot express.</p>
+    <div class="hero-actions r-up">
+      <a href="#work" class="btn-gold">View Our Work</a>
+      <a href="#contact" class="btn-line">Get in Touch</a>
+    </div>
+    <div class="hero-rule bottom"></div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <div class="hs-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════ WORK — REAL PHOTOS ══════════════ -->
+<section id="work">
+  <div class="sec-label">
+    <span class="sl-line"></span>
+    <span class="sl-text">Our Work</span>
+    <span class="sl-line"></span>
+  </div>
+  <h2 class="sec-title">Moments <em>We've Crafted</em></h2>
+
+  <!-- Golden Ratio bento grid: 3 real photos + 1 placeholder each -->
+  <!-- ROW 1: Cinematic / Event -->
+  <div class="work-grid">
+
+    <!-- CELL 1 — LARGE (golden left) -->
+    <div class="wg-item wg-large event" data-cat="Event & Cinematic">
+      <img src="assets/images/bg.jpeg" alt="Ganesh Festival — Cinematic Fireworks" loading="lazy"/>
+      <div class="wg-info">
+        <span class="wg-cat">Event · Cinematic</span>
+        <h3>Ganesh Festival 2024</h3>
+        <p>Fireworks, devotion &amp; cinematic light — captured at the peak of celebration.</p>
+      </div>
+    </div>
+
+    <!-- CELL 2 — Small (golden right top) -->
+    <div class="wg-item event" data-cat="Event">
+      <img src="assets/images/ganesh1.jpg" alt="Festival Coverage" loading="lazy"/>
+      <div class="wg-info">
+        <span class="wg-cat">Event</span>
+        <h3>Festival Coverage</h3>
+        <p>Divine energy, crowd energy, golden light.</p>
+      </div>
+    </div>
+
+    <!-- CELL 3 — Small (golden right bottom) -->
+    <div class="wg-item sky" data-cat="Landscape">
+      <img src="assets/images/sunset1.jpg" alt="Sunset Sky" loading="lazy"/>
+      <div class="wg-info">
+        <span class="wg-cat">Landscape · Sky</span>
+        <h3>Golden Hour Sky</h3>
+        <div class="gi" data-cat="event" data-src="assets/images/yourphoto.jpg">
+      <img src="assets/images/jl1.jpeg" alt="Description" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+      </div>
+        <p>Drama written in clouds and light.</p>
+      </div>
+    </div>
+
+    <!-- CELL 4 — Product (large) -->
+    <div class="wg-item wg-large product" data-cat="Product">
+      <img src="assets/images/jewellery1.jpg" alt="Luxury Jewellery — Tavanio" loading="lazy"/>
+      <div class="wg-info">
+        <span class="wg-cat">Product · Luxury</span>
+        <h3>Tavanio Jewellery</h3>
+        <p>Velvet, candlelight &amp; gold — luxury product storytelling at its finest.</p>
+      </div>
+    </div>
+
+    <!-- CELL 5 — sky wide -->
+    <div class="wg-item wg-wide sky" data-cat="Landscape">
+      <img src="assets/images/sunset1.jpg" alt="Cinematic Sky Wide" loading="lazy"/>
+      <div class="wg-info">
+        <span class="wg-cat">Landscape</span>
+        <h3>Twilight Panorama</h3>
+        <p>The sky as a canvas — our natural studio.</p>
+      </div>
+    </div>
+
+    <!-- CELL 6 — Product small -->
+    <div class="wg-item product" data-cat="Product">
+      <img src="assets/images/jewellery1.jpg" alt="Product Detail" loading="lazy"/>
+      <div class="wg-info">
+        <span class="wg-cat">Product</span>
+        <h3>Jewellery Detail</h3>
+        <p>Macro precision for luxury products.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ GALLERY ══════════════ -->
+<section id="gallery">
+  <div class="sec-label">
+    <span class="sl-line"></span>
+    <span class="sl-text">Gallery</span>
+    <span class="sl-line"></span>
+  </div>
+  <h2 class="sec-title">Photo <em>Gallery</em></h2>
+
+  <!-- Filter tabs -->
+  <div class="gal-filters">
+    <button class="gf-btn active" data-filter="all">All</button>
+    <button class="gf-btn" data-filter="event">Event</button>
+    <button class="gf-btn" data-filter="product">Product</button>
+    <button class="gf-btn" data-filter="sky">Sky</button>
+  </div>
+
+  <div class="gal-grid" id="gal-grid">
+    <div class="gi" data-cat="event" data-src="assets/images/ganesh1.jpg">
+      <img src="assets/images/ganesh1.jpg" alt="Ganesh Festival" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+    <div class="gi" data-cat="sky" data-src="assets/images/sunset1.jpg">
+      <img src="assets/images/sunset1.jpg" alt="Sunset Sky" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+    <div class="gi" data-cat="product" data-src="assets/images/jewellery1.jpg">
+      <img src="assets/images/jewellery1.jpg" alt="Jewellery" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+    <!-- ★ ADD YOUR IMAGES — copy a <div class="gi"> block and change src + data-cat ★ -->
+    <div class="gi" data-cat="event" data-src="assets/images/ganesh1.jpg">
+      <img src="assets/images/ganesh1.jpg" alt="Event" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+    <div class="gi" data-cat="product" data-src="assets/images/jewellery1.jpg">
+      <img src="assets/images/jewellery1.jpg" alt="Product" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+    <div class="gi" data-cat="sky" data-src="assets/images/sunset1.jpg">
+      <img src="assets/images/sunset1.jpg" alt="Sky" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+    <div class="gi" data-cat="event" data-src="assets/images/ganesh1.jpg">
+      <img src="assets/images/ganesh1.jpg" alt="Festival" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+    <div class="gi" data-cat="product" data-src="assets/images/jewellery1.jpg">
+      <img src="assets/images/jewellery1.jpg" alt="Luxury" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+    <div class="gi" data-cat="sky" data-src="assets/images/sunset1.jpg">
+      <img src="assets/images/sunset1.jpg" alt="Clouds" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+    <div class="gi" data-cat="event" data-src="assets/images/ganesh1.jpg">
+      <img src="assets/images/ganesh1.jpg" alt="Cinematic" loading="lazy"/>
+      <div class="gi-hover"><span>View</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lb"><img id="lb-img" src="" alt=""/><button class="lb-x">✕</button><button class="lb-p">‹</button><button class="lb-n">›</button></div>
+
+<!-- ══════════════ FILMS / VIDEO SECTION ══════════════ -->
+<section id="films">
+  <div class="sec-label">
+    <span class="sl-line"></span>
+    <span class="sl-text">Film Reel</span>
+    <span class="sl-line"></span>
+  </div>
+  <h2 class="sec-title">Cinematic <em>Films</em></h2>
+  <p class="sec-sub">Tap to watch — each frame tells a story.</p>
+
+  <div class="films-grid">
+
+    <!-- VIDEO 1 — Wide / Hero reel -->
+    <!-- ★ TO ADD YOUR VIDEO: set data-video="assets/videos/yourfile.mp4" OR data-yt="https://www.youtube.com/embed/VIDEO_ID" ★ -->
+    <div class="film-item film-wide" data-video="assets/videos/video1.mp4" data-yt="">
+      <div class="film-thumb">
+        <img src="assets/images/ganesh1.jpg" alt="Showreel" loading="lazy"/>
+        <div class="film-overlay">
+          <div class="play-ring"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1"/><polygon points="20,16 34,24 20,32" fill="currentColor"/></svg></div>
+        </div>
+        <div class="film-label">
+          <span class="fl-cat">Showreel</span>
+          <h3>SB Studio — 2024 Showreel</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIDEO 2 -->
+    <div class="film-item" data-video="assets/videos/video2.mp4" data-yt="">
+      <div class="film-thumb">
+        <img src="assets/images/sunset1.jpg" alt="Cinematic Sky Film" loading="lazy"/>
+        <div class="film-overlay">
+          <div class="play-ring"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1"/><polygon points="20,16 34,24 20,32" fill="currentColor"/></svg></div>
+        </div>
+        <div class="film-label">
+          <span class="fl-cat">Landscape</span>
+          <h3>Twilight Film</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIDEO 3 -->
+    <div class="film-item" data-video="assets/videos/video3.mp4" data-yt="">
+      <div class="film-thumb">
+        <img src="assets/images/jewellery1.jpg" alt="Product Film" loading="lazy"/>
+        <div class="film-overlay">
+          <div class="play-ring"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1"/><polygon points="20,16 34,24 20,32" fill="currentColor"/></svg></div>
+        </div>
+        <div class="film-label">
+          <span class="fl-cat">Product</span>
+          <h3>Tavanio — Brand Film</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- YouTube CTA -->
+  <div class="yt-cta">
+    <p>Watch more on our channel</p>
+    <!-- ★ REPLACE with your YouTube link ★ -->
+    <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener" class="btn-yt">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="20"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      Subscribe on YouTube
+    </a>
+  </div>
+</section>
+
+<!-- Video Player Modal -->
+<div id="vmodal">
+  <div class="vm-inner">
+    <button class="vm-close">✕</button>
+    <video id="vm-player" controls playsinline></video>
+    <iframe id="vm-yt" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="ct-left">
+      <div class="sec-label left-align">
+        <span class="sl-line short"></span>
+        <span class="sl-text">Let's Create</span>
+      </div>
+      <h2 class="sec-title left">Ready to <em>Work Together?</em></h2>
+      <p class="ct-desc">Whether it's a festival film, product shoot, or a full cinematic production — reach out and we'll craft something extraordinary.</p>
+
+      <!-- Contact details — ★ EDIT THESE ★ -->
+      <div class="ct-links">
+        <a href="tel:+91XXXXXXXXXX" class="ct-link">
+          <div class="ct-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <span class="ct-lbl">Call / WhatsApp</span>
+            <!-- ★ YOUR NUMBER ★ -->
+            <strong>+91 XXXXX XXXXX</strong>
+          </div>
+        </a>
+
+        <a href="mailto:hello@sbstudio.in" class="ct-link">
+          <div class="ct-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <span class="ct-lbl">Email</span>
+            <!-- ★ YOUR EMAIL ★ -->
+            <strong>hello@sbstudio.in</strong>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" class="ct-link">
+          <div class="ct-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <div>
+            <span class="ct-lbl">Instagram</span>
+            <!-- ★ YOUR HANDLE ★ -->
+            <strong>@YOUR_HANDLE</strong>
+          </div>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" class="ct-link">
+          <div class="ct-icon yt-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </div>
+          <div>
+            <span class="ct-lbl">YouTube</span>
+            <!-- ★ YOUR CHANNEL ★ -->
+            <strong>@YOUR_CHANNEL</strong>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="ct-right">
+      <div class="ct-image">
+        <img src="assets/images/jewellery1.jpg" alt="SB Studio Work" loading="lazy"/>
+        <div class="ct-badge">
+          <span class="ctb-num">100+</span>
+          <span class="ctb-lbl">Projects</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">SB<em>Studio</em></div>
+    <div class="ft-socials">
+      <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      </a>
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2024 SB Studio. All rights reserved.</span>
+    <span>Ahmedabad, India</span>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
